@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 50%, #f5f7ff 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white border border-slate-200 rounded-2xl shadow-sm;
+  }
+
+  .search-input {
+    @apply w-full bg-white border border-slate-300 rounded-xl px-5 py-3.5
+           text-slate-800 placeholder-slate-400 text-base font-medium
+           focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-400
+           transition-all duration-200 shadow-sm;
+  }
+
+  .result-card {
+    @apply bg-white border border-slate-200 rounded-2xl p-5 animate-slide-up
+           hover:border-blue-300 hover:shadow-md
+           transition-all duration-200 cursor-default shadow-sm;
+  }
+
+  .field-label {
+    @apply text-xs font-semibold tracking-widest uppercase text-blue-500;
+  }
+
+  .field-value {
+    @apply text-slate-700 text-sm font-medium mt-0.5 leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-pulse-mic {
+    animation: pulseMic 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseMic {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  50%       { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+}
