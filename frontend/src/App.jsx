@@ -3,7 +3,7 @@ import axios from 'axios'
 import SearchBar from './components/SearchBar'
 import RecordCard from './components/RecordCard'
 
-const API_BASE = '/api'
+const API_BASE = 'https://electrical-munwar.onrender.com'
 
 function speakVillages(records) {
   if (!records.length) return
